@@ -1,7 +1,7 @@
 <?php namespace Mayconbordin\Laragen\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Foundation\Composer;
+use Illuminate\Support\Composer;
 use Mayconbordin\Laragen\Console\Helpers\SchemaFieldsTrait;
 use Mayconbordin\Laragen\Exceptions\FileAlreadyExistsException;
 use Mayconbordin\Laragen\Exceptions\MethodNotFoundException;
