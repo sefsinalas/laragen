@@ -25,6 +25,8 @@ class FieldValidationHelper
             $rules[] = 'numeric';
         } else if (self::isDateTime($field)) {
             $rules[] = 'date';
+        } else if (self::isTime($field)) {
+            $rules[] = 'date_format:H:i';
         } else if (self::isJson($field)) {
             $rules[] = 'json';
         } else if (self::isBoolean($field)) {
@@ -60,7 +62,12 @@ class FieldValidationHelper
 
     public static function isDateTime(Field $field)
     {
-        return in_array($field->getType(), ['dateTime', 'date', 'time', 'timestamp']);
+        return in_array($field->getType(), ['dateTime', 'date','timestamp']);
+    }
+
+    public static function isTime(Field $field)
+    {
+        return in_array($field->getType(), ['time']);
     }
 
     public static function isText(Field $field)
