@@ -34,7 +34,8 @@ class Field
         'tinyinteger'        => 'tinyInteger',
         'timestamp'          => 'timestamp',
         'timestamps'         => 'timestamps',
-        'uuid'               => 'uuid'
+        'uuid'               => 'uuid',
+        'image'              => 'image'
     ];
 
     /**

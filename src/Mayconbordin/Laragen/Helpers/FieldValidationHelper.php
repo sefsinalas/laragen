@@ -33,6 +33,8 @@ class FieldValidationHelper
             $rules[] = 'boolean';
         } else if (self::isEnum($field)) {
             $rules[] = 'in:'.implode(',', $field->getArguments());
+        } else if (self::isImage($field)) {
+            $rules[] = 'mimes:jpeg,bmp,png';
         }
 
         if ($field->hasForeign()) {
@@ -88,5 +90,10 @@ class FieldValidationHelper
     public static function isEnum(Field $field)
     {
         return in_array($field->getType(), ['enum']);
+    }
+
+    public static function isImage(Field $field)
+    {
+        return in_array($field->getType(), ['image']);
     }
 }
